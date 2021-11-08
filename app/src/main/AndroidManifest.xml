@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.demodesign">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -10,13 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DemoDesign">
         <activity
-            android:name=".SignUpActivity"
-            android:theme="@style/Theme.DemoDesign.NoActionBarAndStatusBar"
+            android:name=".UserProfileActivity"
             android:exported="true" />
         <activity
+            android:name=".SignUpActivity"
+            android:exported="true"
+            android:theme="@style/Theme.DemoDesign.NoActionBarAndStatusBar" />
+        <activity
             android:name=".HomeActivity"
-            android:theme="@style/Theme.DemoDesign.NoActionBarAndStatusBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.DemoDesign.NoActionBar" />
         <activity
             android:name=".LoadingActivity"
             android:exported="true"

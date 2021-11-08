@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -31,14 +32,15 @@ public class LoginActivity extends AppCompatActivity {
     private TextView tvNull;
     private Dialog dialog;
     private int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         viewGroup = findViewById(R.id.containerLogIn);
-        tilUser = (TextInputLayout) findViewById(R.id.tilUser);
-        tilPass = (TextInputLayout) findViewById(R.id.tilPass);
+        tilUser = (TextInputLayout) findViewById(R.id.tilUserLogIn);
+        tilPass = (TextInputLayout) findViewById(R.id.tilPassword);
         btnSignIn = (AppCompatButton) findViewById(R.id.btnSignIn);
         tvLostPass = (TextView) findViewById(R.id.tvLostPass);
         tvXinChao = (TextView) findViewById(R.id.tvXinChao);
@@ -59,6 +61,28 @@ public class LoginActivity extends AppCompatActivity {
         tvDangKy.setVisibility(View.GONE);
         tvNull.setVisibility(View.GONE);
 
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (tilUser.getEditText().getText().toString().trim().isEmpty()) {
+                    tilUser.setError("Vui lòng nhập Tài khoản người dùng");
+                } else {
+                    tilUser.setErrorEnabled(false);
+                }
+                if (tilPass.getEditText().getText().toString().trim().isEmpty()) {
+                    tilPass.setError("Vui lòng nhập mật khẩu");
+                } else {
+                    tilPass.setErrorEnabled(false);
+                }
+                if (tilUser.getEditText().getText().toString().equalsIgnoreCase("admin") && tilPass.getEditText().getText().toString().equalsIgnoreCase("admin")) {
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
         btnSkipLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,11 +93,13 @@ public class LoginActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         thread.start();
+
         CountDownTimer countDownTimer = new CountDownTimer(1000, 100) {
             @Override
             public void onTick(long l) {
 
             }
+
             @Override
             public void onFinish() {
                 TransitionManager.beginDelayedTransition(viewGroup);
@@ -93,16 +119,16 @@ public class LoginActivity extends AppCompatActivity {
         tvDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),SignUpActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    Thread thread = new Thread(){
+    Thread thread = new Thread() {
         @Override
         public void run() {
-            while (!isInterrupted()){
+            while (!isInterrupted()) {
                 try {
                     Thread.sleep(1000);
                     runOnUiThread(new Runnable() {
@@ -110,24 +136,24 @@ public class LoginActivity extends AppCompatActivity {
                         public void run() {
                             count++;
                             TransitionManager.beginDelayedTransition(viewGroup);
-                            if(count == 5){
+                            if (count == 5) {
                                 tvQuotes.setVisibility(View.INVISIBLE);
-                            }else if(count == 6){
+                            } else if (count == 6) {
                                 tvQuotes.setVisibility(View.VISIBLE);
                                 tvQuotes.setText("Cùng khám phá bảng xếp hạng các bản nhạc \n được yêu thích");
-                            }else if(count == 11){
+                            } else if (count == 11) {
                                 tvQuotes.setVisibility(View.INVISIBLE);
-                            }else if(count == 12){
+                            } else if (count == 12) {
                                 tvQuotes.setVisibility(View.VISIBLE);
                                 tvQuotes.setText("Hãy đăng nhập để trải nghiệm tối đa cùng \n \"MUSICNAME\"");
-                            }else if(count == 17){
+                            } else if (count == 17) {
                                 tvQuotes.setVisibility(View.INVISIBLE);
-                            }else if(count == 18){
+                            } else if (count == 18) {
                                 tvQuotes.setVisibility(View.VISIBLE);
                                 tvQuotes.setText("Nghe nhạc bất cứ đâu bất cứ nới nào");
-                            }else if(count == 23){
+                            } else if (count == 23) {
                                 tvQuotes.setVisibility(View.INVISIBLE);
-                            }else if(count == 24){
+                            } else if (count == 24) {
                                 tvQuotes.setVisibility(View.VISIBLE);
                                 tvQuotes.setText("Sở hữu các bài hát Hot nhất hiện nay");
                                 count = 0;
@@ -145,7 +171,7 @@ public class LoginActivity extends AppCompatActivity {
     private AppCompatButton btnCancelLogin;
     private AppCompatButton btnYesLogIn;
 
-    private void openSkipLogInDialog(){
+    private void openSkipLogInDialog() {
         dialog = new Dialog(LoginActivity.this);
         dialog.setContentView(R.layout.skiplogin_dialog);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -162,7 +188,7 @@ public class LoginActivity extends AppCompatActivity {
         btnYesLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

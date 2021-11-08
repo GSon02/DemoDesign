@@ -4,13 +4,11 @@
 
     <item
         android:icon="@drawable/ic_baseline_home_24"
-
         android:id="@+id/homeFragment"
         android:title="Trang Chủ">
     </item>
     <item
         android:icon="@drawable/ic_baseline_playlist_play_24"
-
         android:id="@+id/playListFragment"
         android:title="PlayList">
     </item>

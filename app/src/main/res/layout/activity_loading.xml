@@ -4,70 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_login"
+    android:background="@drawable/backgroud_loading"
     tools:context=".LoadingActivity">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView2"
-        android:layout_width="match_parent"
-        android:layout_height="82dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="339dp"
+        android:layout_height="83dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88"
         app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:lottie_rawRes="@raw/music_virtulizer">
 
     </com.airbnb.lottie.LottieAnimationView>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView3"
-        android:layout_width="221dp"
-        app:lottie_rawRes="@raw/logo_loadingscreen"
+        android:layout_width="248dp"
+        android:layout_height="252dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        android:layout_height="232dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="174dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:lottie_rawRes="@raw/logo_loadingscreen">
 
     </com.airbnb.lottie.LottieAnimationView>
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="164dp"
-        android:text="MUSIC APP"
-        android:textColor="@color/white"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
         android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="7dp"
+        android:layout_width="372dp"
+        android:layout_height="82dp"
         android:text="Trải nghiệm chất lượng âm \nnhạc đỉnh cao cùng"
         android:textColor="@color/white"
         android:textSize="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.089" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="371dp"
+        android:layout_height="133dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

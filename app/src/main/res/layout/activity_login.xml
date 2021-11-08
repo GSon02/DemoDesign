@@ -2,20 +2,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/containerLogIn"
-    android:background="@drawable/background_login"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_login_test"
     tools:context=".LoginActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilUser"
+        android:id="@+id/tilPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="308dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="60dp"
+        android:layout_width="307dp"
+        android:layout_height="82dp"
         android:animateLayoutChanges="true"
         android:textColorHint="@color/white"
         app:boxCornerRadiusBottomEnd="24dp"
@@ -23,18 +20,22 @@
         app:boxCornerRadiusTopEnd="24dp"
         app:boxCornerRadiusTopStart="24dp"
         app:boxStrokeColor="@color/white"
+        app:boxStrokeErrorColor="#650808"
         app:endIconMode="password_toggle"
+        app:errorTextColor="#650808"
         app:hintTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilPass"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57"
         app:placeholderTextColor="@color/white"
         app:prefixTextColor="@color/white"
         app:startIconDrawable="@drawable/ic_baseline_vpn_key_24_white">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="54dp"
             android:animateLayoutChanges="true"
             android:hint="PassWord"
             android:inputType="textPassword"
@@ -43,13 +44,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPass"
+        android:id="@+id/tilUserLogIn"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="306dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="60dp"
+        android:layout_height="78dp"
         android:animateLayoutChanges="true"
         android:textColorHint="#F3EEEE"
         app:boxBackgroundColor="#00FFFFFF"
@@ -58,16 +56,21 @@
         app:boxCornerRadiusTopEnd="24dp"
         app:boxCornerRadiusTopStart="24dp"
         app:boxStrokeColor="#F8F8F8"
+        app:boxStrokeErrorColor="#650808"
+        app:errorTextColor="#650808"
         app:hintTextColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424"
         app:startIconDrawable="@drawable/ic_baseline_person_24_white"
         app:suffixTextColor="#F1E5E5">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="57dp"
             android:animateLayoutChanges="true"
             android:bottomLeftRadius="24dp"
             android:bottomRightRadius="24dp"
@@ -82,9 +85,6 @@
         android:id="@+id/btnSignIn"
         android:layout_width="125dp"
         android:layout_height="47dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="220dp"
         android:animateLayoutChanges="true"
         android:background="@drawable/custom_button_color"
         android:bottomLeftRadius="24dp"
@@ -96,15 +96,41 @@
         android:topRightRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.717" />
+
+    <TextView
+        android:id="@+id/tvDangKy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng Ký"
+        android:textColor="#F493DF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.792" />
+
+    <TextView
+        android:id="@+id/tvTextNull"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chưa phải là thành viên?"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSkipLogIn"
-        android:layout_width="65dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="75dp"
+        android:layout_height="38dp"
         android:animateLayoutChanges="true"
         android:background="@drawable/custom_button_color"
         android:bottomLeftRadius="24dp"
@@ -114,92 +140,70 @@
         android:textColor="@color/white"
         android:topLeftRadius="24dp"
         android:topRightRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046" />
 
     <TextView
         android:id="@+id/tvLostPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="16dp"
         android:animateLayoutChanges="true"
-        android:text="Quên Mật Khẩu ?"
-        android:textColor="@color/white"
+        android:text="Quên Mật Khẩu?"
+        android:textColor="#393232"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTextNull" />
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
 
     <TextView
-        android:animateLayoutChanges="true"
         android:id="@+id/tvXinChao"
         android:layout_width="198dp"
         android:layout_height="61dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="156dp"
+        android:animateLayoutChanges="true"
         android:text="Xin Chào!"
         android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.104" />
 
     <TextView
-        android:animateLayoutChanges="true"
         android:id="@+id/tv_DesText"
         android:layout_width="288dp"
         android:layout_height="46dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="66dp"
+        android:animateLayoutChanges="true"
         android:text="Chào mừng bạn đến với ứng dụng nghe nhạc của chúng tôi"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvXinChao" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.191" />
 
     <TextView
-        android:animateLayoutChanges="true"
         android:id="@+id/tvQuotes"
         android:layout_width="289dp"
         android:layout_height="41dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="89dp"
-        android:layout_marginEnd="65dp"
+        android:animateLayoutChanges="true"
         android:text="Chào mừng đến với Music"
         android:textAlignment="center"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_DesText" />
-
-    <TextView
-        android:id="@+id/tvTextNull"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="122dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="123dp"
-        android:textStyle="bold"
-        android:text="Chưa có tài khoản Đăng ký"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
-
-    <TextView
-        android:id="@+id/tvDangKy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="182dp"
-        android:layout_marginEnd="182dp"
-        android:text="Tại Đây"
-        android:textColor="#F30EFA"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTextNull" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
