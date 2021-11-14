@@ -1,5 +1,6 @@
 package com.example.demodesign.FragmentMusic;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,12 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.airbnb.lottie.L;
 import com.example.demodesign.DemoAdapter.BaiHatGoiYAdapter_Demo;
 import com.example.demodesign.DemoAdapter.CasiFavorAdapter_Demo;
 import com.example.demodesign.DemoModel.BaiHatGoiY_Model_Demo;
 import com.example.demodesign.DemoModel.CaSiFavor_Model_Demo;
-import com.example.demodesign.DemoModel.Top_Thumbail_Model_Demo;
+import com.example.demodesign.MySongsActivity;
 import com.example.demodesign.R;
 
 import java.util.ArrayList;
@@ -32,7 +32,6 @@ public class PlayListFragment extends Fragment {
     private ImageView imgPlayList;
     private CardView cvCaSi;
     private ImageView imgCaSi;
-    private RecyclerView rcvCaSiFavor;
     private RecyclerView rcvBaiHatGoiY;
 
     private List<CaSiFavor_Model_Demo> caSiFavor_model_demoList;
@@ -49,26 +48,21 @@ public class PlayListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        cvThuVien = (CardView) view.findViewById(R.id.cvThuVien);
+        cvThuVien = (CardView) view.findViewById(R.id.cvBaiHat);
         imgThuVienNhac = (ImageView) view.findViewById(R.id.imgThuVienNhac);
-        cvPlayList = (CardView) view.findViewById(R.id.cvPlayList);
+        cvPlayList = (CardView) view.findViewById(R.id.cvYeuThich);
         imgPlayList = (ImageView) view.findViewById(R.id.imgPlayList);
-        cvCaSi = (CardView) view.findViewById(R.id.cvCaSi);
+        cvCaSi = (CardView) view.findViewById(R.id.cvPlaylist);
         imgCaSi = (ImageView) view.findViewById(R.id.imgCaSi);
-        rcvCaSiFavor = (RecyclerView) view.findViewById(R.id.rcvCaSiFavor);
         rcvBaiHatGoiY = (RecyclerView) view.findViewById(R.id.rcvBaiHatGoiY);
 
-        caSiFavor_model_demoList = new ArrayList<>();
-        caSiFavor_model_demoList.add(new CaSiFavor_Model_Demo(R.drawable.bichphuong_avatar,"Bích Phương"));
-        caSiFavor_model_demoList.add(new CaSiFavor_Model_Demo(R.drawable.dalab_avatar,"Dalab"));
-        caSiFavor_model_demoList.add(new CaSiFavor_Model_Demo(R.drawable.masew_avatar,"Masew"));
-        caSiFavor_model_demoList.add(new CaSiFavor_Model_Demo(R.drawable.bichphuong_avatar,"Bích Phương"));
-        caSiFavor_model_demoList.add(new CaSiFavor_Model_Demo(R.drawable.dalab_avatar,"Dalab"));
-        caSiFavor_model_demoList.add(new CaSiFavor_Model_Demo(R.drawable.masew_avatar,"Masew"));
-        casiFavorAdapterDemo = new CasiFavorAdapter_Demo(getContext(),caSiFavor_model_demoList);
-        rcvCaSiFavor.setAdapter(casiFavorAdapterDemo);
-        LinearLayoutManager layoutManagerCaSi = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
-        rcvCaSiFavor.setLayoutManager(layoutManagerCaSi);
+        cvThuVien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), MySongsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         baiHatGoiY_model_demoList = new ArrayList<>();
         baiHatGoiY_model_demoList.add(new BaiHatGoiY_Model_Demo(R.drawable.demo_burnitdown_thumbail,"Burn it all Down","PVRIS"));

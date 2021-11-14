@@ -64,6 +64,12 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        cvBottomPlayBars.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         setViewPager();
