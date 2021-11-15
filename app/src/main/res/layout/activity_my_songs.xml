@@ -11,7 +11,8 @@
         android:id="@+id/cvBottomPlayBars"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:cardBackgroundColor="#B3FFFFFF"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -118,6 +119,8 @@
         app:boxCornerRadiusBottomStart="24dp"
         app:boxCornerRadiusTopEnd="24dp"
         app:boxCornerRadiusTopStart="24dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
         app:hintTextColor="#CF40E8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,6 +135,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/corner_searchbar"
             android:hint="Tìm kiếm bài hát, bảng..."
+            android:shadowRadius="0"
             android:textColor="@color/white"
             tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -143,6 +147,10 @@
         android:layout_marginStart="141dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="141dp"
+        android:shadowColor="#99000000"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="10"
         android:text="Bài hát của tôi"
         android:textColor="@color/white"
         android:textSize="20dp"
@@ -154,25 +162,31 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="616dp"
-        android:layout_marginTop="1dp"
+        android:layout_height="600dp"
         android:background="@drawable/corner_recycleview_2"
         app:layout_constraintBottom_toTopOf="@+id/cvBottomPlayBars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/appCompatButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="550dp"
         android:background="@drawable/custom_button_color"
+        android:shadowColor="#99000000"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="10"
         android:text="Phát ngẫu nhiên"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/cvBottomPlayBars"
         app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/recyclerView"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.967">
 
     </androidx.appcompat.widget.AppCompatButton>
 

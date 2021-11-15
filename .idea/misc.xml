@@ -14,19 +14,19 @@
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/drawable/ic_baseline_library_music_24.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/drawable/ic_baseline_playlist_play_24.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3728205128205128" />
-        <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_loading.xml" value="0.3625" />
+        <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_loading.xml" value="0.5" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_music_playing.xml" value="0.25" />
+        <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_music_playing.xml" value="0.5" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_my_songs.xml" value="0.33" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/activity_user_profile.xml" value="0.3625" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/bai_hat_goi_y_row_demo.xml" value="0.34556159420289856" />
-        <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/casi_layout_rows.xml" value="0.35054347826086957" />
+        <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/casi_layout_rows.xml" value="0.33" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/fragment_play_list.xml" value="0.25" />
-        <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/fragment_top.xml" value="0.25" />
+        <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/fragment_top.xml" value="0.33" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/item_thumbail_glide.xml" value="0.3625" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/item_thumbail_home_glide.xml" value="0.360054347826087" />
         <entry key="..\:/Users/giang/Desktop/DemoDesign/app/src/main/res/layout/noibat_row_demo.xml" value="0.3625" />

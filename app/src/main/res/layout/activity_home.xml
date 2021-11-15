@@ -20,6 +20,8 @@
         app:boxCornerRadiusBottomStart="24dp"
         app:boxCornerRadiusTopEnd="24dp"
         app:boxCornerRadiusTopStart="24dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
         app:hintTextColor="#CF40E8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -33,7 +35,8 @@
             android:layout_height="match_parent"
             android:background="@drawable/corner_searchbar"
             android:hint="Tìm kiếm bài hát, bảng..."
-            android:textColor="@color/white" />
+            android:textColor="@color/black"
+            app:textInputLayoutFocusedRectEnabled="false" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -43,7 +46,7 @@
         android:background="#FFFFFF"
         app:itemIconTint="@color/custom_color_bottomnav"
         app:itemTextColor="@color/custom_color_bottomnav"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/vpHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,8 +58,7 @@
         android:id="@+id/cvBottomPlayBars"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:cardElevation="0.1dp"
-        app:cardBackgroundColor="#CCFFFFFF"
+        app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -169,7 +171,9 @@
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="7dp"
         app:cardCornerRadius="100dp"
+        app:layout_constraintEnd_toStartOf="@+id/tilFind"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -180,5 +184,4 @@
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/anh_avatar_gson_test" />
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

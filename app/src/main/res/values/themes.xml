@@ -23,6 +23,7 @@
     <style name="Theme.DemoDesign.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">false</item>
         <item name="android:fitsSystemWindows">true</item>
     </style>

@@ -1,14 +1,16 @@
 package com.example.demodesign.DemoModel;
 
-public class CaSiFavor_Model_Demo{
+public class CaSiHome_Model_Demo {
     Integer imgCaSiID;
+    Integer imgCaSi;
     String TenCaSi;
 
-    public CaSiFavor_Model_Demo() {
+    public CaSiHome_Model_Demo() {
     }
 
-    public CaSiFavor_Model_Demo(Integer imgCaSiID, String tenCaSi) {
+    public CaSiHome_Model_Demo(Integer imgCaSiID, Integer imgCaSi, String tenCaSi) {
         this.imgCaSiID = imgCaSiID;
+        this.imgCaSi = imgCaSi;
         TenCaSi = tenCaSi;
     }
 
@@ -18,6 +20,14 @@ public class CaSiFavor_Model_Demo{
 
     public void setImgCaSiID(Integer imgCaSiID) {
         this.imgCaSiID = imgCaSiID;
+    }
+
+    public Integer getImgCaSi() {
+        return imgCaSi;
+    }
+
+    public void setImgCaSi(Integer imgCaSi) {
+        this.imgCaSi = imgCaSi;
     }
 
     public String getTenCaSi() {
@@ -30,8 +40,9 @@ public class CaSiFavor_Model_Demo{
 
     @Override
     public String toString() {
-        return "CaSiFavor_Model_Demo{" +
+        return "CaSiHome_Model_Demo{" +
                 "imgCaSiID=" + imgCaSiID +
+                ", imgCaSi=" + imgCaSi +
                 ", TenCaSi='" + TenCaSi + '\'' +
                 '}';
     }

@@ -16,9 +16,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.demodesign.DemoAdapter.BaiHatGoiYAdapter_Demo;
-import com.example.demodesign.DemoAdapter.CasiFavorAdapter_Demo;
+import com.example.demodesign.DemoAdapter.CasiHomeAdapter_Demo;
 import com.example.demodesign.DemoModel.BaiHatGoiY_Model_Demo;
-import com.example.demodesign.DemoModel.CaSiFavor_Model_Demo;
+import com.example.demodesign.DemoModel.CaSiHome_Model_Demo;
 import com.example.demodesign.MySongsActivity;
 import com.example.demodesign.R;
 
@@ -34,8 +34,8 @@ public class PlayListFragment extends Fragment {
     private ImageView imgCaSi;
     private RecyclerView rcvBaiHatGoiY;
 
-    private List<CaSiFavor_Model_Demo> caSiFavor_model_demoList;
-    private CasiFavorAdapter_Demo casiFavorAdapterDemo;
+    private List<CaSiHome_Model_Demo> caSiHome_model_demoList;
+    private CasiHomeAdapter_Demo casiFavorAdapterDemo;
     private List<BaiHatGoiY_Model_Demo> baiHatGoiY_model_demoList;
     private BaiHatGoiYAdapter_Demo baiHatGoiYAdapter_demo;
 

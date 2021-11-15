@@ -12,12 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DemoDesign">
         <activity
+            android:theme="@style/Theme.DemoDesign.NoActionBar"
             android:name=".MusicPlayingActivity"
             android:exported="true" />
         <activity
+            android:theme="@style/Theme.DemoDesign.NoActionBar"
             android:name=".MySongsActivity"
             android:exported="true" />
         <activity
+            android:theme="@style/Theme.DemoDesign.NoActionBar"
             android:name=".UserProfileActivity"
             android:exported="true" />
         <activity
@@ -27,7 +30,7 @@
         <activity
             android:name=".HomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.DemoDesign.NoActionBarAndStatusBar" />
+            android:theme="@style/Theme.DemoDesign.NoActionBar" />
         <activity
             android:name=".LoadingActivity"
             android:exported="true"

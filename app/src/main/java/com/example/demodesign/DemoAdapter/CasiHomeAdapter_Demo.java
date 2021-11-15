@@ -11,18 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.demodesign.DemoModel.CaSiFavor_Model_Demo;
+import com.example.demodesign.DemoModel.CaSiHome_Model_Demo;
 import com.example.demodesign.R;
 
 import java.util.List;
 
-public class CasiFavorAdapter_Demo extends RecyclerView.Adapter<CasiFavorAdapter_Demo.MyViewHolder> {
+public class CasiHomeAdapter_Demo extends RecyclerView.Adapter<CasiHomeAdapter_Demo.MyViewHolder> {
     private Context context;
-    private List<CaSiFavor_Model_Demo> caSiFavor_model_demoList;
+    private List<CaSiHome_Model_Demo> caSiHome_model_demoList;
 
-    public CasiFavorAdapter_Demo(Context context, List<CaSiFavor_Model_Demo> caSiFavor_model_demoList) {
+    public CasiHomeAdapter_Demo(Context context, List<CaSiHome_Model_Demo> caSiHome_model_demoList) {
         this.context = context;
-        this.caSiFavor_model_demoList = caSiFavor_model_demoList;
+        this.caSiHome_model_demoList = caSiHome_model_demoList;
     }
 
     @NonNull
@@ -34,14 +34,14 @@ public class CasiFavorAdapter_Demo extends RecyclerView.Adapter<CasiFavorAdapter
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        final CaSiFavor_Model_Demo caSiFavor_model_demo = caSiFavor_model_demoList.get(position);
-        holder.tvTenCaSiCaNhan.setText(caSiFavor_model_demo.getTenCaSi());
-        Glide.with(context).load(caSiFavor_model_demo.getImgCaSiID()).into(holder.imgCaSiCaNhan);
+        final CaSiHome_Model_Demo caSiHome_model_demo = caSiHome_model_demoList.get(position);
+        holder.tvTenCaSiCaNhan.setText(caSiHome_model_demo.getTenCaSi());
+        Glide.with(context).load(caSiHome_model_demo.getImgCaSi()).into(holder.imgCaSiCaNhan);
     }
 
     @Override
     public int getItemCount() {
-        return caSiFavor_model_demoList.size();
+        return caSiHome_model_demoList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

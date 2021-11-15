@@ -11,31 +11,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.demodesign.DemoAdapter.CasiHomeAdapter_Demo;
 import com.example.demodesign.DemoAdapter.DemoAdapterNoiBat_Demo;
 import com.example.demodesign.DemoAdapter.SliderAdapter_Demo;
+import com.example.demodesign.DemoModel.CaSiHome_Model_Demo;
 import com.example.demodesign.DemoModel.NoiBatImageModel_Demo;
 import com.example.demodesign.DemoModel.Thumbail_Model_Demo;
 import com.example.demodesign.R;
-import com.google.android.material.textfield.TextInputLayout;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import me.relex.circleindicator.CircleIndicator;
-
 public class HomeFragment extends Fragment {
     private List<NoiBatImageModel_Demo> noiBatImageModel_demoList;
     private List<Thumbail_Model_Demo> thumbail_model_demoList;
+    private List<CaSiHome_Model_Demo> caSiHome_model_demoList;
     private DemoAdapterNoiBat_Demo demoAdapterNoiBatDemo;
+    private CasiHomeAdapter_Demo casiHomeAdapter_demo;
     private SliderAdapter_Demo sliderAdapter_demo;
     private RecyclerView rcvNoiBat;
-    private RecyclerView rcvHot;
-    private RecyclerView rcvCaSi;
+    private RecyclerView rcvSinger;
+    private RecyclerView rcvNews;
     private TextView tvNoiBat;
     private SliderView imgSliderThumbail;
     private ScrollView scrollViewHome;
@@ -52,27 +52,37 @@ public class HomeFragment extends Fragment {
         rcvNoiBat = (RecyclerView) view.findViewById(R.id.rcvNoiBat);
         tvNoiBat = (TextView) view.findViewById(R.id.tvNoiBat);
         imgSliderThumbail = (SliderView) view.findViewById(R.id.imgSliderThumbail);
-        rcvHot = (RecyclerView) view.findViewById(R.id.rcvHot);
-        rcvCaSi = (RecyclerView) view.findViewById(R.id.rcvCaSi);
+        rcvSinger = (RecyclerView) view.findViewById(R.id.rcvSinger);
+        rcvNews = (RecyclerView) view.findViewById(R.id.rcvNews);
         scrollViewHome = (ScrollView) view.findViewById(R.id.scrollViewHome);
 
         noiBatImageModel_demoList = new ArrayList<>();
         demoAdapterNoiBatDemo = new DemoAdapterNoiBat_Demo(getContext(),noiBatImageModel_demoList);
         noiBatImageModel_demoList.add(new NoiBatImageModel_Demo(1,R.drawable.demo_lofigirl_thumbail_test,"Nghe nhạc cùng LofiGirl"));
-        noiBatImageModel_demoList.add(new NoiBatImageModel_Demo(1,R.drawable.demo_tinhyeumauhong_lofi_test,"Tình Yêu Màu Hồng"));
-        noiBatImageModel_demoList.add(new NoiBatImageModel_Demo(1,R.drawable.demo_nangtho_test,"Nàng thơ của Hoàng Dũng"));
+        noiBatImageModel_demoList.add(new NoiBatImageModel_Demo(2,R.drawable.demo_tinhyeumauhong_lofi_test,"Tình Yêu Màu Hồng"));
+        noiBatImageModel_demoList.add(new NoiBatImageModel_Demo(3,R.drawable.demo_nangtho_test,"Nàng thơ của Hoàng Dũng"));
         rcvNoiBat.setAdapter(demoAdapterNoiBatDemo);
         RecyclerView.LayoutManager layoutManagerNoiBat = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL,false);
         rcvNoiBat.setLayoutManager(layoutManagerNoiBat);
 
         //TEST
-        rcvCaSi.setAdapter(demoAdapterNoiBatDemo);
+        rcvNews.setAdapter(demoAdapterNoiBatDemo);
         RecyclerView.LayoutManager layoutManagerCaSi = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL,false);
-        rcvCaSi.setLayoutManager(layoutManagerCaSi);
-        rcvHot.setAdapter(demoAdapterNoiBatDemo);
+        rcvNews.setLayoutManager(layoutManagerCaSi);
+
+        caSiHome_model_demoList = new ArrayList<>();
+        casiHomeAdapter_demo = new CasiHomeAdapter_Demo(getContext(),caSiHome_model_demoList);
+        caSiHome_model_demoList.add(new CaSiHome_Model_Demo(1,R.drawable.bichphuong_avatar,"Bích Phương"));
+        caSiHome_model_demoList.add(new CaSiHome_Model_Demo(2,R.drawable.dalab_avatar,"DaLab"));
+        caSiHome_model_demoList.add(new CaSiHome_Model_Demo(3,R.drawable.masew_avatar,"Masew"));
+        caSiHome_model_demoList.add(new CaSiHome_Model_Demo(1,R.drawable.bichphuong_avatar,"Bích Phương"));
+        caSiHome_model_demoList.add(new CaSiHome_Model_Demo(2,R.drawable.dalab_avatar,"DaLab"));
+        caSiHome_model_demoList.add(new CaSiHome_Model_Demo(3,R.drawable.masew_avatar,"Masew"));
+        rcvSinger.setAdapter(casiHomeAdapter_demo);
         RecyclerView.LayoutManager layoutManagerHot = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL,false);
-        rcvHot.setLayoutManager(layoutManagerHot);
+        rcvSinger.setLayoutManager(layoutManagerHot);
         //TEST
+
         thumbail_model_demoList = new ArrayList<>();
         sliderAdapter_demo = new SliderAdapter_Demo(getContext(),thumbail_model_demoList);
         thumbail_model_demoList.add(new Thumbail_Model_Demo(R.drawable.demo_burnitdown_thumbail));
